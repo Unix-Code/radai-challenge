@@ -19,11 +19,11 @@ $ pip install -r requirements-dev.txt
     b. To use STDIN, it will be necessary to redirect some content like so:
        Unix:
        ```
-       $ python main.py < "foobar.txt"
+       $ python main.py < foobar.txt
        ```
        Windows (System used to develop challenge) PowerShell:
        ```
-       $ type "foobar.txt" | python main.py
+       $ type foobar.txt | python main.py
        ```
 3. View Output in STDOUT
 
@@ -59,3 +59,8 @@ $ pip install -r requirements-dev.txt
     * Using a library like PyInstaller
     * Building the project into an installable package (if it's to be composed in other systems), ie using Poetry
     * Writing a Dockerfile to create a reusable Docker image
+
+* Note: I wrote a lot of the components to be reusable and thus wrote validation to support that. 
+  Given the fact that there no invalid initial input, this may not be necessary and can be removed for
+  brevity, but if the reusable components can be expected to be reused in a slightly different context,
+  then the additional validation would serve some utility.
